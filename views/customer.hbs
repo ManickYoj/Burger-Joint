@@ -1,0 +1,23 @@
+<div class="container">
+	<!-- TABLE HEADER -->
+	<div id='alert-box'></div>
+	<div id='header-row' class="row th bottom-border">
+		<div class="col-md-1"><strong>Order</strong></div>
+		<div class="col-md-1"><strong>Price</strong></div>
+		<div class="col-md-3"><strong>Name</strong></div>
+		<div class="col-md-3"><strong>Total Cost: </strong> $<span id='total'>0</span></div>
+		<div class="col-md-2">
+			<input id="customer-name" class="form-control" type='text' placeholder='Your Name' />
+		</div>
+		<div class="col-md-2 text-right">
+			<input id="submit-button" type="submit" class="btn btn-info" form='#order-form' value="Send me food!" disabled>
+		</div>
+	</div>
+
+	<!-- INGREDIENT ROWS-->
+	<form id='#order-form'>
+		{{#each ingredient}}
+			{{> order-ingredient}}
+		{{/each}}
+	</form>
+</div>

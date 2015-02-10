@@ -1,0 +1,26 @@
+<div id="{{id}}"class="row-group">
+	<div  class="row">
+		<!-- Completed Checkbox -->
+		<div class="col-md-1 ">
+			<button class='btn btn-success complete-order full-width' value="{{id}}" type="submit">
+				<span class="glyphicon glyphicon-ok"></span>
+			</button>
+		</div>
+
+		<div class="col-md-2"><strong>{{customerName}}</strong></div>
+	</div>
+
+	<!-- Order Rows -->
+	{{#each items}}
+		<div class="row">
+			<div class="col-md-2 col-md-offset-3">
+				<strong>Burger:</strong>
+			</div>
+			<div class="col-md-7">
+				{{#each ingredients}}
+					<span class="comma-seperator">{{name}}</span>
+				{{/each}}
+			</div>
+		</div>
+	{{/each}}
+</div>
