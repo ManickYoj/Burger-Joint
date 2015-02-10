@@ -1,0 +1,42 @@
+{{#each ingredients	}}
+<div class='ingredient-row'>
+	<!-- Display Row -->
+	<div class="row">
+		<div class='col-md-2'>
+			<button class="btn btn-alert" type="button" data-toggle='collapse' data-target='#edit{{id}}'>
+				<span class="glyphicon glyphicon-pencil"></span>
+			</button>
+		</div>
+
+		<div class='quantity col-md-2'>{{quantity}}</div>
+		<div class='price col-md-2'>{{currency price}}</div>
+		<div class='name col-md-3'>{{name}}</div>
+
+		<div class='col-md-2'><button value="{{name}}" class="oos-button btn btn-alert" {{#unless quantity}}disabled{{/unless}}>Mark Out of Stock</button></div>
+		<div class='col-md-1'><button value="{{name}}" class="delete-button btn btn-danger">Delete</button></div>
+	</div>
+
+	<!-- Edit Row -->
+	<form class="ingredient-edit-row" method="POST">
+		<div class="collapse row" id="edit{{id}}">
+			<div class='col-md-2 col-md-offset-2'>
+				<input id="new-qty" class="form-control" type='text' name='qty' value="{{quantity}}" placeholder='Quantity' />
+			</div>
+			<div class="col-md-2">
+				<div class="input-group">
+					<div class="input-group-addon">$</div>
+					<input class="form-control" type='text' name='price' value='{{cents price}}' placeholder='Price' />
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<input class="form-control" type='text' name='name' value='{{name}}' placeholder='Ingredient Name' />
+			</div>
+
+			<div class="col-md-2">
+				<button class="btn btn-success" type='submit' value="update">Update</button>
+			</div>
+		</div>
+	</form>
+</div>
+{{/each}}

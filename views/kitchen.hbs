@@ -1,0 +1,19 @@
+<div class="container">
+	<!-- TABLE HEADER -->
+	<div id='alert-box'></div>
+	<div id='header-row' class="row th bottom-border">
+		<div class="col-md-1 text-left"><strong>Complete</strong></div>
+		<div class="col-md-2"><strong>Customer Name</strong></div>
+		<div class="col-md-2"><strong>Item Names</strong></div>
+		<div class="col-md-7"><strong>Item Ingredients</strong></div>
+	</div>
+
+
+	<!-- INGREDIENT ROWS-->
+	<div id='#kitchen-form'>
+		{{#each order}}
+			{{> kitchen-order}}
+		{{/each}}
+	</div>
+</div>
+
